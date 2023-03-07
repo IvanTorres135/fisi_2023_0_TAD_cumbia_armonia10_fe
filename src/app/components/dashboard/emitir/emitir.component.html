@@ -1,0 +1,63 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Emitir Recibos</span>
+        <div class="example-spacer"></div>
+        <button mat-raised-button color="primary" (click)="openDialog()">Generar Nuevo Recibo</button>
+    </mat-toolbar>
+    <br>
+    <mat-form-field>
+      <mat-label>Buscar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+      
+    <div class="mat-elevation-z3">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>N°</th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="recibo">
+          <th mat-header-cell *matHeaderCellDef>DETALLE DE RECIBO</th>
+          <td mat-cell *matCellDef="let element"> {{element.recibo}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="ano">
+          <th mat-header-cell *matHeaderCellDef>AÑO</th>
+          <td mat-cell *matCellDef="let element"> {{element.ano}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="mes">
+          <th mat-header-cell *matHeaderCellDef>MES</th>
+          <td mat-cell *matCellDef="let element"> {{element.mes}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="monto">
+          <th mat-header-cell *matHeaderCellDef>MONTO</th>
+          <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef>ARCHIVO</th>
+          <td mat-cell *matCellDef="let element"> 
+            <a class="pointer" style="color:red" matTooltip="PDF">
+              <mat-icon>picture_as_pdf</mat-icon>
+            </a>
+            <a class="pointer" style="color:green" matTooltip="Excel">
+              <mat-icon>table_chart</mat-icon>
+            </a>
+            <a class="pointer" matTooltip="Imprimir">
+              <mat-icon>print</mat-icon>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+
+</div>
+<br>
+<br>
