@@ -1,7 +1,15 @@
 <div>
 <h1>NUEVO RECIBO</h1>
-<h3>Año: 2023</h3>
-<h3>Mes: abril</h3>
+<a>Año: 2023</a><a  > Mes: abril</a><br>
+
+<mat-form-field class="ancho" appearance="fill">
+  <mat-label>Fecha de Inicio </mat-label>
+  <input type="date" matInput autocomplete="off" formControlName="fecinicio">
+</mat-form-field>
+<mat-form-field class="ancho" appearance="fill">
+  <mat-label>Fecha de Fin</mat-label>
+  <input type="date" matInput autocomplete="off" formControlName="fecfin">
+</mat-form-field>
 
 <table mat-table [dataSource]="transactions">
     <!-- Item Column -->
