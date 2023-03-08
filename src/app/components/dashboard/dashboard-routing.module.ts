@@ -4,6 +4,8 @@ import { DashboardComponent } from './dashboard.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { EmitirComponent } from './emitir/emitir.component';
 import { LecturasComponent } from './lecturas/lecturas.component';
+import { VisualizarComponent } from './visualizar/visualizar.component';
+import { ReciboPropitarioComponent } from './recibo-propitario/recibo-propitario.component';
 
 const routes: Routes = [
   {path:'',component:DashboardComponent,children:[
@@ -11,6 +13,8 @@ const routes: Routes = [
     {path:'emitir',component:EmitirComponent},
     {path:'lecturas',component:LecturasComponent},
     {path:'inicio',component:InicioComponent},
+    {path:'visualizar',component:VisualizarComponent},
+    {path:'recibo-propietario',component:ReciboPropitarioComponent}
   ]}
 ];
 

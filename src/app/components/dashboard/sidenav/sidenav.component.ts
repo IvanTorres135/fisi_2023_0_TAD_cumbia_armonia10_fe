@@ -16,7 +16,7 @@ export class SidenavComponent implements OnInit{
   fillerNav=[
     {name:"Inicio",route:"inicio"},
     {name:"Emitir Recibos",route:"emitir"},
-    {name:"Registrar Lecturas",route:"lecturas"},
+    {name:"Visualizar Recibos",route:"visualizar"},
     {name:"Salir",route:""},
   ]
   fillerContent=Array.from({length:50},()=> `Hola probando`);

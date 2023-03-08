@@ -1,0 +1,16 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Visualizar Recibos</span>
+    </mat-toolbar>
+   
+    <div class="button-container">
+        <div class="button-container">
+            <form (click)="ver_recibo()">
+                <button *ngFor="let button of buttons" class="button">{{ button.text }}
+                    <img src="../../../assets/img/usuario.png" width="47%">
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

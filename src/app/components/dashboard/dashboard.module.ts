@@ -9,6 +9,8 @@ import { EmitirComponent } from './emitir/emitir.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { LecturasComponent } from './lecturas/lecturas.component';
 import { NuevoReporteComponent } from './mensaje/nuevo-reporte/nuevo-reporte.component';
+import { VisualizarComponent } from './visualizar/visualizar.component';
+import { ReciboPropitarioComponent } from './recibo-propitario/recibo-propitario.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { NuevoReporteComponent } from './mensaje/nuevo-reporte/nuevo-reporte.com
     EmitirComponent,
     SidenavComponent,
     LecturasComponent,
-    NuevoReporteComponent
+    NuevoReporteComponent,
+    VisualizarComponent,
+    ReciboPropitarioComponent
   ],
   imports: [
     CommonModule,
