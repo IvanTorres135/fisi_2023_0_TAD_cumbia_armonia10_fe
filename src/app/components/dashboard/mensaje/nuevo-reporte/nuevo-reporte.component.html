@@ -1,46 +1,50 @@
 <div>
 <h1>NUEVO RECIBO</h1>
-<a>Año: 2023</a><a  > Mes: abril</a><br>
+  <a>Año: {{ fecharecibo.ano }}</a><a> Mes: {{fecharecibo.mes}}</a><br>
 
 <mat-form-field class="ancho" appearance="fill">
   <mat-label>Fecha de Inicio </mat-label>
-  <input type="date" matInput autocomplete="off" formControlName="fecinicio">
+  <input type="date" matInput autocomplete="off" formControlName="fecinicio" #inicio>
 </mat-form-field>
 <mat-form-field class="ancho" appearance="fill">
   <mat-label>Fecha de Fin</mat-label>
-  <input type="date" matInput autocomplete="off" formControlName="fecfin">
+  <input type="date" matInput autocomplete="off" formControlName="fecfin" #fin>
 </mat-form-field>
 
-<table mat-table [dataSource]="transactions">
+
+<div class="container">
+<table mat-table [dataSource]="datarecibogenera">
     <!-- Item Column -->
     <ng-container matColumnDef="item">
       <th mat-header-cell *matHeaderCellDef> Detalles de Recibo </th>
-      <td mat-cell *matCellDef="let transaction"> {{transaction.item}} </td>
+      <td mat-cell *matCellDef="let datarecibogenera"> {{datarecibogenera.titulo}} </td>
       <td mat-footer-cell *matFooterCellDef> Total </td>
     </ng-container>
 
     <!-- Cost Column -->
     <ng-container matColumnDef="cost">
       <th mat-header-cell *matHeaderCellDef> Monto </th>
-      <td mat-cell *matCellDef="let transaction"> S/. {{transaction.cost}} </td>
-      <td mat-footer-cell *matFooterCellDef> S/. {{getTotalCost()}} </td>
+      <td mat-cell *matCellDef="let datarecibogenera"> S/. {{(datarecibogenera.monto/64).toFixed(2) }} </td>
+      <td mat-footer-cell *matFooterCellDef> S/. {{sumarMonto()}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
-  </table>
+</table>
+</div>
 
   <a>Consumo de agua</a><br>
-  <a>Se tienen datos de () departamentos</a>
+  <a>Se tienen datos de {{sumarRegistros()}} departamentos</a>
   <br>
   <br>
   <a>Multas y/o penalidades</a><br>
-  <a>Se cuenta con () multas</a>
+  <a>Se cuenta con {{sumarRegistroMulta()}} multas</a>
   <br>
   <br>
   <div class="example-button-container">
-    <button mat-raised-button color="primary">Emitir Recibos</button>
+    <button mat-raised-button color="primary" (click)="generaciondeRecibo(inicio.value , fin.value)" *ngIf="loading1" [disabled]="isDisabled">Emitir Recibos</button>
+    <mat-spinner *ngIf="loading" class="spinner">diameter="50"</mat-spinner>
   </div>
   <br>
 </div>

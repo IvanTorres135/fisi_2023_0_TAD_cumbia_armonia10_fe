@@ -20,6 +20,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -38,6 +39,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatIconModule,
     MatTableModule,
     MatPaginatorModule,
+    MatProgressSpinnerModule,
     MatTooltipModule,
     MatDialogModule,
     MatDatepickerModule
@@ -47,6 +49,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     ReactiveFormsModule,
     MatSnackBarModule,
     MatSidenavModule,

@@ -2,3 +2,15 @@
     display: flex;
     justify-content: center;
   }
+
+  .container {
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+    overflow-x: auto;
+    height: 500px;
+  }
+
+  .spinner{
+    margin:0 auto;
+    }
