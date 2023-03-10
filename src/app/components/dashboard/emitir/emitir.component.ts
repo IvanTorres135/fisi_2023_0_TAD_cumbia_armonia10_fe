@@ -13,9 +13,9 @@ import { MatDialog } from '@angular/material/dialog';
 export class EmitirComponent implements OnInit{
 
   ListRecibos: Recibos[] = [
-    {id: 1, recibo: 'RECIBO-01/23',ano:2023, mes:'enero',monto:9260},
-    {id: 2, recibo: 'RECIBO-02/23',ano:2023, mes:'febrero',monto:10243},
-    {id: 3, recibo: 'RECIBO-03/23',ano:2023, mes:'marzo',monto:9731},
+    {id: 1, recibo: 'RECIBO-11/22',ano:2023, mes:'noviembre',monto:9260},
+    {id: 2, recibo: 'RECIBO-12/22',ano:2023, mes:'diciembre',monto:10243},
+    {id: 3, recibo: 'RECIBO-01/23',ano:2023, mes:'marzo',monto:9731},
   ];
 
   displayedColumns: string[] = ['id','recibo','ano','mes','monto','acciones'];

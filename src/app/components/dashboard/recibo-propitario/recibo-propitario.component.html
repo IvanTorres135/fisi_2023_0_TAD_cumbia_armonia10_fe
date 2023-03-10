@@ -1,9 +1,32 @@
-<p>recibo-propitario works!</p>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="container">
+    <mat-toolbar>
+        <span>Recibos de Pago del Departamento</span>
+        <div class="example-spacer"></div>
+    </mat-toolbar>
+
+    <table mat-table [dataSource]="transactions">
+        <ng-container matColumnDef="item">
+          <th mat-header-cell *matHeaderCellDef> Nro </th>
+          <td mat-cell *matCellDef="let transaction"> {{transaction.item}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+          <td mat-cell *matCellDef="let transaction"> {{transaction.descripcion}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef> Valor </th>
+            <td mat-cell *matCellDef="let transaction"> {{transaction.valor}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fec_rec">
+            <th mat-header-cell *matHeaderCellDef> Fecha Rec </th>
+            <td mat-cell *matCellDef="let transaction"> {{transaction.fec_rec}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[9, 27, 90, 180]" aria-label="Select page of users"></mat-paginator>
+</div>

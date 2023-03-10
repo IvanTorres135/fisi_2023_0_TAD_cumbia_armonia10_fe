@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { ReciboService } from './services/recibo.service';
+import { UsuarioService } from './services/usuario.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ReciboService } from './services/recibo.service';
     HttpClientModule
   ],
   providers: [
-    ReciboService
+    ReciboService,
+    UsuarioService
   ],
   bootstrap: [AppComponent]
 })
