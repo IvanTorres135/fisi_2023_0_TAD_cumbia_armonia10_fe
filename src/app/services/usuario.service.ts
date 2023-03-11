@@ -6,11 +6,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class UsuarioService {
 
-  API_URI = 'http://localhost:3000/api';
+  API_URI = 'localhost:3000';
 
   constructor(private http: HttpClient) {}
 
   getUserdata(dpto: string){
-    return this.http.get(`${this.API_URI}/datauser/${dpto}`);
+    return this.http.get(`${this.API_URI}/ne-User/servicio-al-cliente/v1/dpto/${dpto}`);
   }
 }
